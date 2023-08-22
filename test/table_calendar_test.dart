@@ -9,6 +9,7 @@ import 'package:table_calendar/src/widgets/cell_content.dart';
 import 'package:table_calendar/src/widgets/custom_icon_button.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../lib/src/shared/utils.dart';
 import 'common.dart';
 
 final initialFocusedDay = DateTime.utc(2021, 7, 15);
@@ -1282,8 +1283,7 @@ void main() {
             firstDay: firstDay,
             lastDay: lastDay,
             currentDay: today,
-            rangeStartDay: rangeStart,
-            rangeEndDay: rangeEnd,
+            ranges: [DateRange(rangeStart, rangeEnd)],
           ),
         ));
 
@@ -1317,8 +1317,7 @@ void main() {
             firstDay: firstDay,
             lastDay: lastDay,
             currentDay: today,
-            rangeStartDay: rangeStart,
-            rangeEndDay: rangeEnd,
+            ranges: [DateRange(rangeStart, rangeEnd)],
           ),
         ));
 
@@ -1352,8 +1351,7 @@ void main() {
             firstDay: firstDay,
             lastDay: lastDay,
             currentDay: today,
-            rangeStartDay: rangeStart,
-            rangeEndDay: rangeEnd,
+            ranges: [DateRange(rangeStart, rangeEnd)],
           ),
         ));
 
