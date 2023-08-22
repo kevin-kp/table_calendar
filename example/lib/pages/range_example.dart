@@ -26,7 +26,7 @@ class _TableRangeExampleState extends State<TableRangeExample> {
       appBar: AppBar(
         title: Text('TableCalendar - Range'),
       ),
-      body: TableCalendar(
+      body: MultiRangeTableCalendar(
         firstDay: kFirstDay,
         lastDay: kLastDay,
         focusedDay: _focusedDay,

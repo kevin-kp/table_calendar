@@ -136,7 +136,7 @@ class _TableComplexExampleState extends State<TableComplexExample> {
               );
             },
           ),
-          TableCalendar<Event>(
+          MultiRangeTableCalendar<Event>(
             firstDay: kFirstDay,
             lastDay: kLastDay,
             focusedDay: _focusedDay.value,

@@ -31,7 +31,7 @@ Widget createTableCalendar({
   bool sixWeekMonthsEnforced = false,
 }) {
   return setupTestWidget(
-    TableCalendar(
+    MultiRangeTableCalendar(
       focusedDay: focusedDay ?? initialFocusedDay,
       firstDay: firstDay,
       lastDay: lastDay,
@@ -425,7 +425,7 @@ void main() {
         final eventDay = DateTime.utc(2021, 7, 20);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -465,7 +465,7 @@ void main() {
       'currentDay correctly marks given day as today',
       (tester) async {
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -489,7 +489,7 @@ void main() {
         final lastDay = DateTime.utc(now.year, now.month + 3, now.day);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: now,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -510,7 +510,7 @@ void main() {
         final selectedDay = DateTime.utc(2021, 7, 20);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -535,7 +535,7 @@ void main() {
         final holiday = DateTime.utc(2021, 7, 20);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -601,7 +601,7 @@ void main() {
 
       await tester.pumpWidget(createTableCalendar(focusedDay: focusedDay));
 
-      expect(find.byType(TableCalendar), findsOneWidget);
+      expect(find.byType(MultiRangeTableCalendar), findsOneWidget);
       expect(find.text('June 2021'), findsOneWidget);
 
       await tester.drag(find.byType(CellContent).first, const Offset(500, 0));
@@ -618,7 +618,7 @@ void main() {
 
       await tester.pumpWidget(createTableCalendar(focusedDay: focusedDay));
 
-      expect(find.byType(TableCalendar), findsOneWidget);
+      expect(find.byType(MultiRangeTableCalendar), findsOneWidget);
       expect(find.text('August 2021'), findsOneWidget);
 
       await tester.drag(find.byType(CellContent).first, const Offset(-500, 0));
@@ -636,7 +636,7 @@ void main() {
       CalendarFormat calendarFormat = CalendarFormat.month;
 
       await tester.pumpWidget(setupTestWidget(
-        TableCalendar(
+        MultiRangeTableCalendar(
           focusedDay: today,
           firstDay: firstDay,
           lastDay: lastDay,
@@ -661,7 +661,7 @@ void main() {
       CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
 
       await tester.pumpWidget(setupTestWidget(
-        TableCalendar(
+        MultiRangeTableCalendar(
           focusedDay: today,
           firstDay: firstDay,
           lastDay: lastDay,
@@ -686,7 +686,7 @@ void main() {
       CalendarFormat calendarFormat = CalendarFormat.week;
 
       await tester.pumpWidget(setupTestWidget(
-        TableCalendar(
+        MultiRangeTableCalendar(
           focusedDay: today,
           firstDay: firstDay,
           lastDay: lastDay,
@@ -715,7 +715,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -743,7 +743,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -772,7 +772,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -806,7 +806,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: DateTime.utc(2021, 8, 16),
             firstDay: firstDay,
             lastDay: lastDay,
@@ -841,7 +841,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -869,7 +869,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -898,7 +898,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -932,7 +932,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: DateTime.utc(2021, 8, 16),
             firstDay: firstDay,
             lastDay: lastDay,
@@ -969,7 +969,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1013,7 +1013,7 @@ void main() {
         DateTime? focusedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1058,7 +1058,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1113,7 +1113,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1168,7 +1168,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1223,7 +1223,7 @@ void main() {
         DateTime? selectedDay;
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1278,7 +1278,7 @@ void main() {
         final rangeEnd = DateTime.utc(2021, 7, 21);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1312,7 +1312,7 @@ void main() {
         final rangeEnd = DateTime.utc(2021, 7, 13);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,
@@ -1346,7 +1346,7 @@ void main() {
         final rangeEnd = DateTime.utc(2021, 7, 13);
 
         await tester.pumpWidget(setupTestWidget(
-          TableCalendar(
+          MultiRangeTableCalendar(
             focusedDay: initialFocusedDay,
             firstDay: firstDay,
             lastDay: lastDay,

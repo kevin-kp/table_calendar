@@ -22,7 +22,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
       appBar: AppBar(
         title: Text('TableCalendar - Basics'),
       ),
-      body: TableCalendar(
+      body: MultiRangeTableCalendar(
         firstDay: kFirstDay,
         lastDay: kLastDay,
         focusedDay: _focusedDay,

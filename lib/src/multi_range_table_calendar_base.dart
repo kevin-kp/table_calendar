@@ -7,7 +7,7 @@ import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 import 'shared/utils.dart';
 import 'widgets/calendar_core.dart';
 
-class TableCalendarBase extends StatefulWidget {
+class MultiRangeTableCalendarBase extends StatefulWidget {
   final DateTime firstDay;
   final DateTime lastDay;
   final DateTime focusedDay;
@@ -37,7 +37,7 @@ class TableCalendarBase extends StatefulWidget {
   final void Function(DateTime focusedDay)? onPageChanged;
   final void Function(PageController pageController)? onCalendarCreated;
 
-  TableCalendarBase({
+  MultiRangeTableCalendarBase({
     Key? key,
     required this.firstDay,
     required this.lastDay,
@@ -80,10 +80,10 @@ class TableCalendarBase extends StatefulWidget {
         super(key: key);
 
   @override
-  _TableCalendarBaseState createState() => _TableCalendarBaseState();
+  _MultiRangeTableCalendarBaseState createState() => _MultiRangeTableCalendarBaseState();
 }
 
-class _TableCalendarBaseState extends State<TableCalendarBase> {
+class _MultiRangeTableCalendarBaseState extends State<MultiRangeTableCalendarBase> {
   late final ValueNotifier<double> _pageHeight;
   late final PageController _pageController;
   late DateTime _focusedDay;
@@ -109,7 +109,7 @@ class _TableCalendarBaseState extends State<TableCalendarBase> {
   }
 
   @override
-  void didUpdateWidget(TableCalendarBase oldWidget) {
+  void didUpdateWidget(MultiRangeTableCalendarBase oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (_focusedDay != widget.focusedDay ||

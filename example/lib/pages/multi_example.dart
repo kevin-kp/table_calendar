@@ -66,7 +66,7 @@ class _TableMultiExampleState extends State<TableMultiExample> {
       ),
       body: Column(
         children: [
-          TableCalendar<Event>(
+          MultiRangeTableCalendar<Event>(
             firstDay: kFirstDay,
             lastDay: kLastDay,
             focusedDay: _focusedDay,

@@ -12,7 +12,7 @@ import 'customization/calendar_style.dart';
 import 'customization/days_of_week_style.dart';
 import 'customization/header_style.dart';
 import 'shared/utils.dart';
-import 'table_calendar_base.dart';
+import 'multi_range_table_calendar_base.dart';
 import 'widgets/calendar_header.dart';
 import 'widgets/cell_content.dart';
 
@@ -29,7 +29,7 @@ typedef OnRangeSelected = void Function(
 enum RangeSelectionMode { disabled, toggledOff, toggledOn, enforced }
 
 /// Highly customizable, feature-packed Flutter calendar with gestures, animations and multiple formats.
-class TableCalendar<T> extends StatefulWidget {
+class MultiRangeTableCalendar<T> extends StatefulWidget {
   /// Locale to format `TableCalendar` dates with, for example: `'en_US'`.
   ///
   /// If nothing is provided, a default locale will be used.
@@ -205,7 +205,7 @@ class TableCalendar<T> extends StatefulWidget {
   final void Function(PageController pageController)? onCalendarCreated;
 
   /// Creates a `TableCalendar` widget.
-  TableCalendar({
+  MultiRangeTableCalendar({
     Key? key,
     required DateTime focusedDay,
     required DateTime firstDay,
@@ -272,10 +272,10 @@ class TableCalendar<T> extends StatefulWidget {
         super(key: key);
 
   @override
-  _TableCalendarState<T> createState() => _TableCalendarState<T>();
+  _MultiRangeTableCalendarState<T> createState() => _MultiRangeTableCalendarState<T>();
 }
 
-class _TableCalendarState<T> extends State<TableCalendar<T>> {
+class _MultiRangeTableCalendarState<T> extends State<MultiRangeTableCalendar<T>> {
   late final PageController _pageController;
   late final ValueNotifier<DateTime> _focusedDay;
   late RangeSelectionMode _rangeSelectionMode;
@@ -289,7 +289,7 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
   }
 
   @override
-  void didUpdateWidget(TableCalendar<T> oldWidget) {
+  void didUpdateWidget(MultiRangeTableCalendar<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (_focusedDay.value != widget.focusedDay) {
@@ -477,7 +477,7 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
           ),
         Flexible(
           flex: widget.shouldFillViewport ? 1 : 0,
-          child: TableCalendarBase(
+          child: MultiRangeTableCalendarBase(
             onCalendarCreated: (pageController) {
               _pageController = pageController;
               widget.onCalendarCreated?.call(pageController);
